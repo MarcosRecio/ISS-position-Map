@@ -1,12 +1,9 @@
 # Map International Space Station current position
-
+import os
 import folium
 import requests
 import time
 import webbrowser
-
-# Defining the folder where the HTML file will be saved  
-filefolder = '/home/marcos/Programación/Python/'
 
 # Locating JSON file
 ISS = 'http://api.open-notify.org/iss-now.json'
@@ -39,7 +36,7 @@ while True:
     
     # Saving the map to a HTML file to be read by a web browser
     folium_map.save('iss.html')
-    webbrowser.open('file://'+filefolder+'iss.html', new = -1)
+    webbrowser.open('file://'+ os.path.realpath('iss.html'), new = -1)
 
     # Using a delay of 5 seconds
     time.sleep(5)
